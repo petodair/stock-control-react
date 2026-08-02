@@ -1,12 +1,7 @@
-import { Button } from "@/components/ui/button";
+import Login from "./pages/Login";
 
 function App() {
-  return (
-    <>
-      <h1 className="text-4xl text-amber-700">Hello word!</h1>
-      <Button>Teste</Button>
-    </>
-  );
+  return <Login />;
 }
 
 export default App;
