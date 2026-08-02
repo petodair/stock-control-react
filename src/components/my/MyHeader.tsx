@@ -3,9 +3,9 @@ import React from "react";
 
 function MyHeader() {
   return (
-    <header className="bg-[#165b79] p-1 flex justify-between items-center">
+    <header className="bg-background p-1 flex justify-between items-center">
       <SidebarTrigger />
-      <span className="font-semibold md:hidden">Stock-Control</span>
+      <span className="font-semibold md:hidden mr-1">Stock-Control</span>
     </header>
   );
 }
