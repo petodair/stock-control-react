@@ -1,4 +1,4 @@
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import MyHeader from "./my/MyHeader";
 import MySiderbar from "./my/MySiderbar";
 
@@ -6,10 +6,10 @@ function Layout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
       <MySiderbar />
-      <main className="min-w-full">
+      <SidebarInset className="flex-1 md:bg-slate-900 overflow-x-hidden">
         <MyHeader />
         {children}
-      </main>
+      </SidebarInset>
     </SidebarProvider>
   );
 }

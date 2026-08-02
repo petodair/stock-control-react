@@ -14,7 +14,12 @@ function MyInput({ id, label, placeholder, type }: MyInputProps) {
       <FieldLabel className="text-white" htmlFor={id}>
         {label}
       </FieldLabel>
-      <Input id={id} type={type} placeholder={placeholder} />
+      <Input
+        className="md:border-background"
+        id={id}
+        type={type}
+        placeholder={placeholder}
+      />
     </Field>
   );
 }

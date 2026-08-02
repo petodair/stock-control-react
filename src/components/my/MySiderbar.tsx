@@ -18,7 +18,7 @@ function MySiderbar() {
   ];
 
   return (
-    <Sidebar>
+    <Sidebar variant="inset">
       <SidebarHeader>Stock Control</SidebarHeader>
       <SidebarContent>
         <SidebarGroup>

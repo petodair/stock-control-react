@@ -1,9 +1,10 @@
 import Layout from "./components/Layout";
+import ProductForm from "./pages/product/ProductForm";
 
 function App() {
   return (
     <Layout>
-      <div className="min-h-full bg-background"></div>
+      <ProductForm />
     </Layout>
   );
 }
