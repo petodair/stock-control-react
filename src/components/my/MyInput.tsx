@@ -8,18 +8,13 @@ type MyInputProps = {
   type: string;
 };
 
-function MyInput({id,label,placeholder,type}:MyInputProps) {
+function MyInput({ id, label, placeholder, type }: MyInputProps) {
   return (
     <Field>
-      <FieldLabel className="text-[#165b79]" htmlFor={id}>
+      <FieldLabel className="text-white" htmlFor={id}>
         {label}
       </FieldLabel>
-      <Input
-        className="border-[#092c3a]"
-        id={id}
-        type={type}
-        placeholder={placeholder}
-      />
+      <Input id={id} type={type} placeholder={placeholder} />
     </Field>
   );
 }
