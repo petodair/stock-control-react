@@ -2,6 +2,7 @@ import { Field, FieldGroup } from "@/components/ui/field";
 import MyInput from "../../components/my/MyInput";
 import { Button } from "@/components/ui/button";
 import MySelect from "../../components/my/MySelect";
+import ProductTypeDialog from "./ProductTypeDialog";
 
 function ProductForm() {
   const productTypeList = [
@@ -33,15 +34,19 @@ function ProductForm() {
           type="number"
           placeholder="Insira o preço do produto"
         />
+      </FieldGroup>
+      <br />
+      <FieldGroup className="grid md:grid-cols-2">
         <MySelect
           label="Tipo de produto"
           placeholder="Tipos"
           selectItems={productTypeList}
         />
-        <Field>
-          <Button>Cadastrar</Button>
-        </Field>
+        <ProductTypeDialog />
       </FieldGroup>
+      <Field>
+        <Button>Cadastrar</Button>
+      </Field>
     </div>
   );
 }
