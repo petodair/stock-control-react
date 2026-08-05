@@ -10,7 +10,9 @@ import type { DialogTriggerState } from "@base-ui/react/dialog";
 import React, { type JSXElementConstructor, type ReactElement } from "react";
 
 type MyDialogProps = {
-  trigger:
+  open?: boolean;
+  onOpenChange?: () => void;
+  trigger?:
     | ReactElement<unknown, string | JSXElementConstructor<any>>
     | ComponentRenderFn<HTMLProps, DialogTriggerState>
     | undefined;
@@ -18,9 +20,15 @@ type MyDialogProps = {
   header: string;
 };
 
-function MyDialog({ children, trigger, header }: MyDialogProps) {
+function MyDialog({
+  children,
+  trigger,
+  header,
+  open,
+  onOpenChange,
+}: MyDialogProps) {
   return (
-    <Dialog>
+    <Dialog open={!!open} onOpenChange={onOpenChange}>
       <DialogTrigger render={trigger} />
       <DialogContent className="sm:max-w-sm">
         <DialogHeader>

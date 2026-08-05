@@ -7,8 +7,21 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { mockProducts } from "../../service/ProductService";
+import { useState } from "react";
+import type Product from "../../types/Product";
+import ProductDialog from "./ProductDialog";
 
 function ProductList() {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  function handleRowClick(product: Product) {
+    setSelectedProduct(product);
+  }
+
+  function handleCloseDialog() {
+    setSelectedProduct(null);
+  }
+
   const list = mockProducts();
 
   return (
@@ -27,7 +40,11 @@ function ProductList() {
           <TableBody>
             {list.map((product) => (
               <>
-                <TableRow className="md:hidden">
+                {/* Tabela para mobile */}
+                <TableRow
+                  className="md:hidden"
+                  onClick={() => handleRowClick(product)}
+                >
                   <TableCell colSpan={4}>
                     <div className="flex flex-col gap-1 p-2">
                       <span>
@@ -58,6 +75,10 @@ function ProductList() {
           </TableBody>
         </Table>
       </div>
+      <ProductDialog
+        product={selectedProduct}
+        onOpenChange={handleCloseDialog}
+      />
     </div>
   );
 }
