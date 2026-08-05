@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Field, FieldGroup } from "@/components/ui/field";
 import logoImg from ".././assets/images/petercode-logo.png";
 import logoTextImg from ".././assets/images/petercode-text.png";

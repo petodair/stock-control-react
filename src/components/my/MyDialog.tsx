@@ -5,11 +5,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { FieldGroup } from "@/components/ui/field";
 import type { ComponentRenderFn, HTMLProps } from "@base-ui/react";
 import type { DialogTriggerState } from "@base-ui/react/dialog";
 import React, { type JSXElementConstructor, type ReactElement } from "react";
-import MyInput from "./MyInput";
 
 type MyDialogProps = {
   trigger:
