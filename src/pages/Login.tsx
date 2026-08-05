@@ -1,10 +1,11 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Field, FieldGroup } from "@/components/ui/field";
 import logoImg from ".././assets/images/petercode-logo.png";
 import logoTextImg from ".././assets/images/petercode-text.png";
 import MyInput from "../components/my/MyInput";
 import MyCard from "../components/my/MyCard";
+import { Link } from "react-router";
 
 function Login() {
   return (
@@ -31,7 +32,15 @@ function Login() {
             placeholder="Insira sua senha"
           />
           <Field>
-            <Button className="hover:cursor-pointer">Confirmar</Button>
+            <Link
+              className={buttonVariants({
+                variant: "default",
+                size: "default",
+              })}
+              to="/"
+            >
+              Confirmar
+            </Link>
           </Field>
         </FieldGroup>
       </CardContent>

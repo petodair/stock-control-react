@@ -9,12 +9,25 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { LayoutDashboard, UsersRound } from "lucide-react";
+import {
+  LayoutDashboard,
+  List,
+  ListPlus,
+  LogOut,
+  UsersRound,
+} from "lucide-react";
+import { Link } from "react-router";
 
 function MySiderbar() {
-  const sidebarMenuTools = [
-    { name: "Dashboard", icon: <LayoutDashboard /> },
-    { name: "Setores", icon: <UsersRound /> },
+  const sidebarMenuTools: {
+    name: string;
+    icon: React.ReactNode;
+    link: string;
+  }[] = [
+    { name: "Dashboard", icon: <LayoutDashboard />, link: "/" },
+    { name: "Setores", icon: <UsersRound />, link: "/" },
+    { name: "Lista", icon: <List />, link: "/product/list" },
+    { name: "Adicionar", icon: <ListPlus />, link: "/product/form" },
   ];
 
   return (
@@ -25,17 +38,30 @@ function MySiderbar() {
           <SidebarGroupLabel>Ferramentas</SidebarGroupLabel>
           <SidebarMenu>
             {sidebarMenuTools.map((tool) => (
-              <SidebarMenuItem key={tool.name}>
-                <SidebarMenuButton>
-                  {tool.icon}
-                  <span>{tool.name}</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
+              <Link to={tool.link}>
+                <SidebarMenuItem key={tool.name}>
+                  <SidebarMenuButton>
+                    {tool.icon}
+                    <span>{tool.name}</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              </Link>
             ))}
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter></SidebarFooter>
+      <SidebarFooter>
+        <SidebarMenu>
+          <Link to="/login">
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <LogOut />
+                <span>Logout</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </Link>
+        </SidebarMenu>
+      </SidebarFooter>
     </Sidebar>
   );
 }
